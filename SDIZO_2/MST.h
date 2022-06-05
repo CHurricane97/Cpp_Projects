@@ -1,0 +1,60 @@
+#include<windows.h>
+#include<iostream>
+#include<iomanip>
+#include <stdlib.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+#ifndef SDIZO_2_MST_H
+#define SDIZO_2_MST_H
+
+#include "Structures.h"
+
+
+class MSTmain {
+private:
+    int lwierzch;
+    int lkrawedzi;
+    int **macierz;
+    ellisty **listas;
+    float density;
+    boolean sto;
+public:
+
+    MSTmain(string nazwap, boolean los, int lw, float dens, boolean series);
+
+    ~MSTmain();
+
+    int lkraw(int lwi, float densi);
+
+    void generategraff(int lwi, float densi);
+
+    bool file_read_line(ifstream &file, int tab[], int size);
+
+    void wczytajzpliku(string n);
+
+    void show1();
+
+    void show2();
+
+    long long int primmac();
+
+    long long int primlists();
+
+    long long int kruskalmac();
+
+    long long int kruskallists();
+
+    kraw minkraw(kraw2 *list, kraw2 *rozps);
+
+    void menu();
+
+    long long int read_QPC();
+
+    void purge();
+
+
+};
+#endif //SDIZO_2_MST_H
